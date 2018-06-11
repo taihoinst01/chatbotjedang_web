@@ -31,7 +31,9 @@ $(function () {
         "<ul>" +
         //"<li class='menuSelectBtn'><span><a href='#' onclick='viewMenu('Accident analysis')'> Accident analysis </span></a></li>" +
         //"<li class='menuSelectBtn'><span><a href='#' onclick='viewMenu('Accident trends')'> Accident trends </span></a></li>" +
-        "<li class='menuSelectBtn'><span><a href='#' onclick='viewMenu()'> return home </span></a></li>" +
+        "<li class='menuSelectBtn'><span><a href='#' onclick='viewMenu()'> 처음으로 </span></a></li>" +
+        "<li class='menuSelectBtn'><span><a href='#' onclick='viewMenu()'> 주문접수 </span></a></li>" +
+        "<li class='menuSelectBtn'><span><a href='#' onclick='viewMenu()'> 주문조회 </span></a></li>" +
         "</ul>" +
         "</div > ").appendTo(".wc-chatview-panel");
 
