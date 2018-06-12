@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <script src="/javascripts/jquery-3.2.0.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script>
+        
+        $(document).ready(function () {
+            
+        });
+
+        function paging(currentPageTemp) {           
+            var currentPage = Number(currentPageTemp);
+
+            $('input[name="currentPage"]').val(currentPage);
+            $.ajax({      
+                type: 'GET',  
+                url: '/users/paging',
+                data: $('#pageData').serialize(),
+                success: function (data) {
+                    var txt = '';
+                    for (var i = 0; i < data.result.length; i++) {
+                        txt += '<tr>';
+                        txt += '<td>' + data.result[i].sid + '</td>';
+                        txt += '<td>' + data.result[i].user_number + '</td>';
+                        txt += '<td class="txt_left">' + data.result[i].customer_comment + '</td>';
+                        txt += '<td>' + data.result[i].channel + '</td>';
+                        txt += '<td>' + data.result[i].response_time + '</td>';
+                        txt += '<td>' + data.result[i].reg_date + '</td>';
+                        txt += '<td><input type="button" value="삭제" class="btn_delete" onclick="deleteUser(' + data.result[i].sid + ')"/></td></tr>';
+
+                    }
+                    $('tbody').html('');
+                    $('tbody').append(txt);                 
+
+                    var pageNum = '';
+
+                    if ((data.currentPage / data.pageCount) > 1) {
+                        pageNum += ' <a href="#" class="bbs_pre" onclick="paging(1);"><span class="hc">처음</span></a> ';
+                    }
+                    if (data.currentPage > data.pageCount) {
+                        pageNum += ' <a href="#" class="bbs_pre2" onclick="paging(' + (data.startPage - 1) + ');"><span class="hc">이전</span></a> ';
+                    }
+                    for (var i = data.startPage; i <= data.endPage; i++) {
+                        if (data.currentPage == i) {
+                            pageNum += ' <a class="page_number on">' + i + '</a> ';
+                        } else {
+                            pageNum += ' <a class="page_number" href="#" onclick="paging(' + i + ');">' + i + '</a> ';
+                        }
+                    }
+                    if ((data.startPage + data.pageCount) <= data.totPageCount) {
+                        pageNum += ' <a href="#" class="bbs_next" onclick="paging(' + (data.startPage + data.pageCount) + ');"><span class="hc">다음</span></a> ';
+                    }
+                    if ((data.totPageCount - data.startPage) >= data.pageCount) {
+                        pageNum += ' <a href="#" class="bbs_next2" onclick="paging(' + data.totPageCount + ');"><span class="hc">끝</span></a> ';
+                    }
+                    $('#paging').html('');
+                    $('#paging').append(pageNum);
+                    
+                    $('input[name="currentPage"]').val(data.currentPage);
+                    $('input[name="totPageCount"]').val(data.totPageCount);
+                    $('input[name="pageCount"]').val(data.pageCount);
+                    $('input[name="startPage"]').val(data.startPage);
+                    $('input[name="endPage"]').val(data.endPage);
+                },
+                error:function(e){
+                }  
+            });  
+        };
+
+        function deleteUser(sid) {
+            if (confirm('삭제하시겠습니까?')) {
+                $('input[name="deleteSid"]').val(sid);
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/users/delete',
+                    data: $('#pageData').serialize(),
+                    success: function (data) {
+                        $('input[name="deleteSid"]').val('');
+                        location.href = '/users';
+                    },
+                    error: function (e) {
+                    }
+                });
+            }
+        };       
+    </script>
+    
+    <title></title>
+</head>
+<body>
+    <form id="pageData">
+        <input type="hidden" name="currentPage" value="<%=currentPage%>"/>
+        <input type="hidden" name="totPageCount" value="<%=totPageCount%>" />
+        <input type="hidden" name="pageCount" value="<%=pageCount%>" />
+        <input type="hidden" name="startPage" value="<%=startPage%>" />
+        <input type="hidden" name="endPage" value="<%=endPage%>" />
+        <input type="hidden" name="deleteSid" value="" />
+    </form>
+
+    <div class="user_head"><p><span>Suggested Utterances</span></p></div>
+
+    <div class="Tbl_wrap">
+        <table class="Tbl_user">
+            <colgroup><col width="6%" /><col width="20%" /><col width="36%" /><col width="10%" /><col width="7%" /><col width="10%" /><col width="10%" /></colgroup>
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>고유번호</th>
+                    <th>고객코맨트</th>
+                    <th>채널</th>
+                    <th>응답시간</th>
+                    <th>날짜</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% result.forEach(function(item,index){%>
+                <tr>
+                    <td><%=item.sid%></td>
+                    <td><%=item.user_number%></td>
+                    <td class="txt_left"><%=item.customer_comment%></td>
+                    <td><%=item.channel%></td>
+                    <td><%=item.response_time%></td>
+                    <td><%=item.reg_date%></td>
+                    <td>
+                        <input type="button" value="삭제" class="btn_delete" onclick="deleteUser('<%=item.sid%>')" />
+                    </td>
+                </tr>
+                <%});%>
+            </tbody>
+        </table>
+    </div>    
+    <div id="paging" class="paginate">
+        <%if((currentPage / pageCount) > 1){%>
+            <a class="bbs_pre" href="#" onclick="paging(1);"> <span class="hc">처음</span></a>
+        <%}%>
+        <%if(currentPage > pageCount){%>
+            <a class="bbs_pre2" href="#" onclick="paging('<%=startPage-1%>');"> <span class="hc">이전</span></a>
+        <%}%>
+        <%for(var i = startPage;i <= endPage;i++){%>
+            <%if(currentPage == i){%>
+                <a href="#" class="on page_number"><span><%=i%></span></a>
+            <%}else{%>
+                <a href="#" class="page_number" onclick="paging('<%=i%>');"><span><%=i%></span></a>
+            <%}%>
+        <%}%>
+        <%if((startPage + pageCount) <= totPageCount){%>
+            <a class="bbs_next" href="#" onclick="paging('<%=startPage+pageCount%>');"> <span class="hc">다음</span></a>
+        <%}%>
+        <%if((totPageCount - startPage) >= pageCount){%>
+            <a class="bbs_next2" href="#" onclick="paging('<%=totPageCount%>');">  <span class="hc">끝</span></a>
+        <%}%>
+    </div>
+</body>
+</html>

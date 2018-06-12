@@ -1,0 +1,2 @@
+C:\workspace_nodejs\app-service-web-nodejs-get-started\FromExistingCode1\obj\Debug\FromExistingCode1.njsprojResolveAssemblyReference.cache
+C:\workspace_nodejs\app-service-web-nodejs-get-started\FromExistingCode1\bin\Microsoft.NodejsTools.WebRole.dll

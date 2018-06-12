@@ -1,0 +1,129 @@
+<!--
+ * Project		:: ICT위탁관리스시템
+ * Description	:: 공지사항 게시판
+ * Library		:: jQuery, KendoUI, HeadJS, UnderscoreJS, Bootstrap
+ * Modify		::
+ *   [20140829][권재용] :: Birthday
+ *
+-->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<title>ICT위탁관리시스템</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link rel="shortcut icon" type="image/x-icon" href="/image/icon/favicon.ico" />
+
+	<!-- Import CSS -->
+	<link rel="stylesheet" href="/css/import-style.css" />
+	
+	<!-- Import JavaScript, HeadJS -->
+	<script src="/js/lib/head.js" data-headjs-load="/js/init-scripts.js"></script>
+	<script src="/js/mainTopMenu.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="top">
+		<!-- 네비게이션 ------------------->
+		<!-- <div id="navigation">
+		</div> -->
+		<script>
+			var retMenu = topMenu1();
+			document.write(retMenu);
+		</script>
+	</div>
+	<!-- 컨텐츠  시작-->
+	<div id="contents">
+		<table border="0" cellspacing="0" cellpadding="0" id="title">
+			<tr>
+				<td class="ti">공지사항</td>
+				<td align="right">
+					<a href="/main.html" class="his">HOME</a> &gt; 
+					<a href="/view/board/notiBrd.html">공지사항</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="height: 2px; background-color: #eeeeee" colspan=2></td>
+			</tr>
+			<tr>
+				<td style="height: 10px; padding-bottom: 8px; text-align: right" valign=bottom colspan=2></td>
+			</tr>
+		</table>
+		
+		<!-- Serch area -->
+		<form id="frm01" name="frm01" method="post">
+		<input type="hidden" id="empNo" name="empNo" value="" />
+		<input type="hidden" id="brdSeq" name="brdSeq" value="" />
+		<input type="hidden" id="brdCd" name="brdCd" value="1" />
+		<input type="hidden" id="lstChgPrs" name="lstChgPrs" value="" />
+		<table border="0" cellspacing="0" cellpadding="0" id="sch">
+			<caption>검색</caption>
+			<colgroup>
+			<col width="*"/>
+			<col width="60px"/>
+			<col width="120px"/>
+			<col width="60px"/>
+			<col width="120px"/>
+			<!-- <col width="60px"/>
+			<col width="120px"/> -->
+			<col width="70px"/>
+			</colgroup>
+			<tr align="left">
+				<th></th>
+				<!-- <th>작성자</th>
+				<td>
+					<input type="text" id="searId" name="searId" class="box" style="width:95%;" />
+				</td> -->
+				<th>제목</th>
+				<td>
+					<input type="text" id="searTitl" name="searTitl" class="box" style="width:95%;" />
+				</td>
+				<!-- <th>카테고리</th>
+				<td>
+					<select name="sel0101" id="sel0101" style="width:95%;">
+						<option value="" selected="selected">-전체-</option>
+					</select>
+				</td> -->
+				<td align="center"><a href="#" id="btnSearch"><button type="button" class="btn btn-xs btn-info">조회</button></a></td>
+			</tr>
+		</table>
+		</form>
+		<br />
+		<!-- Serch area -->
+		<table width="100%" border ="0">
+			<tr>
+				<Td align="right">
+					<font color="#FF0000"><B>※ 목록 더블클릭시 상세내역 조회가 가능합니다.</B></font> 
+				</Td>
+			</tr>
+		</table>
+		
+		<!-- START : Grid and Buttons -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-xs-12-per">
+					<div id="grd0101" class="panel-grid"></div>
+				</div>
+				<div class="col-xs-12-per grid-bottom-btns">
+					<!-- <a href="#" id="btn0103"><img src="/image/icon/btn_11.gif" /></a> -->
+					<button type="button" class="btn btn-primary btn-sm" id="btn0101">등록</button>
+					<button type="button" class="btn btn-primary btn-sm" id="btn0102">삭제</button>
+				</div>
+			</div>
+		</div>
+		<!-- END : Grid and Buttons -->
+	</div>
+	<!-- 컨텐츠  끝-->
+	<!-- 푸터 -->
+	<div id="footer">
+	</div>
+	<!-- 푸터 end -->
+	
+	<!-- Import This Page JavaScript -->
+	<script type="text/javascript" src="/view/board/notiBrd.js"></script>
+	
+	<!-- 사용자관리 창 -->
+	<div id="winNotiBrd"></div>
+</body>
+</html>

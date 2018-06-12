@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html> 
+<html>
+  <head>
+    <meta Content-Type=text/html; charset="utf-8"/>
+    <!--<link href="https://unpkg.com/botframework-webchat/botchat.css" rel="stylesheet" />-->
+    <link href="/stylesheets/botchat.css" rel="stylesheet" />
+  </head>
+  <body>
+      
+  	<div id="bot" />
+  	<script src="https://grandizer.azurewebsites.net/lib/jquery.min.js"></script>
+  	<script src="https://grandizer.azurewebsites.net/lib/B_tLKTzaqVzw=90All.js"></script>
+  	<script src="https://grandizer.azurewebsites.net/lib/recorderWorker.js"></script>
+  	<script src="https://grandizer.azurewebsites.net/lib/r_2L=91cmJzxIl.js"></script>
+  	<script src="https://grandizer.azurewebsites.net/lib/d_zGK93GFZztll.js"></script>
+
+  	<script src="https://grandizer.azurewebsites.net/javascripts/s_2b=Z3GKTzVll.js"></script>
+  	<script src="https://grandizer.azurewebsites.net/javascripts/d_zGK93GFZzaOyVll.js"></script>
+  	<script src="https://grandizer.azurewebsites.net/javascripts/botchat.js"></script>
+  	<script src="https://grandizer.azurewebsites.net/javascripts/vagel.js"></script>
+  	<script>
+        const botConnection = new BotChat.DirectLine({
+            secret: '2gIRLJx-vUY.cwA.eVs.6K9Dk-RNgyuX0uJsuz18IOzzojGgWudEQ7oi_Vr2Chs'
+        });
+
+		BotChat.App({
+            botConnection: botConnection,
+			user: { id: 'userid' },
+			bot: { id: 'botid' },
+            resize: 'detect'
+        }, document.getElementById("bot"));
+
+        function postButtonMessage(msg) {
+            botConnection
+                .postActivity({
+                    type: 'message',
+                    text: msg,
+                    from: { id: 'userid' },
+                    locale: 'ko'
+                })
+                .subscribe(function () {
+                    console.log('"buttonClicked" sent');
+                });
+        };
+
+  	</script>
+  </body>
+</html>
+
