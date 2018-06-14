@@ -20,7 +20,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {font-family: 'Seg
 
 .wc-app audio, .wc-app video {display: block;}
 
-#bot {overflow: hidden;position: absolute;right: 0;left: 0;top: 0; bottom: 0;  margin:auto ;  width:700px; height:746px; background: url(../image/convenience_chat.png) no-repeat 0px 0px; padding-left:78px}
+#bot {overflow: hidden;position: absolute;right: 0;left: 0;top: 0; bottom: 0;  margin:auto ;  width:700px; height:746px; background: url(../image/convenience_chat.png) no-repeat 0px 0px; padding-left:230px}
 /* docking */
 .wc-hidden {visibility: hidden;}
 .wc-header {left: 0; padding: 8px 8px 0 8px;position: absolute;right: 0;top: 0;z-index: 1; }

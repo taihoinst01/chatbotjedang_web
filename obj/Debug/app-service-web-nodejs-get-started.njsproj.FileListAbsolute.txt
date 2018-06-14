@@ -2,3 +2,4 @@ C:\Users\songhj\Source\Repos\chatBotWeb\obj\Debug\app-service-web-nodejs-get-sta
 C:\Users\songhj\Source\Repos\chatBotWeb\bin\Microsoft.NodejsTools.WebRole.dll
 C:\Users\user\source\repos\chatbotjedang_web\obj\Debug\app-service-web-nodejs-get-started.njsproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\chatbotjedang_web\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\user\source\repos\chatbotjedang_web\obj\Debug\app-service-web-nodejs-get-started.njsprojAssemblyReference.cache
