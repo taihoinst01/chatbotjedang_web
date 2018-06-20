@@ -2543,7 +2543,7 @@
                             return e.content ? o.createElement("div", {
                                 className: "wc-card hero",
                                 onClick: n(e.content.tap)
-                            }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text.replace("\n\n","<p></p>")), r(e.content.buttons)) : null;
+                            }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text.replace("&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;","<p></p>")), r(e.content.buttons)) : null;
                         }
                     case "application/vnd.microsoft.card.thumbnail":
                         return e.content ? o.createElement("div", {
