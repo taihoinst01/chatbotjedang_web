@@ -2500,11 +2500,17 @@
                     return o.createElement("h2", null, t)
                 })
             },
-            m = function(t) {
-                return i.renderIfNonempty(t, function(t) {
-                    return o.createElement("p", null, t)
+            m = function (t) {
+                return i.renderIfNonempty(t, function (t) {
+                    //return o.createElement("p", null, t)
+                    return o.createElement("p", null, o.createElement("p", null, t))
                 })
             };
+            //m = function(t) {
+            //    return i.renderIfNonempty(t, function(t) {
+            //        return o.createElement("p", null, t)
+            //    })
+            //};
         e.AttachmentView = function(t) {
             if (t.attachment) {
                 var e = t.attachment,
@@ -2540,7 +2546,6 @@
                                 onClick: n(e.content.tap)
                             }, o.createElement("div", { className: "wc-card-hero-newImage" }, s(e.content.images)), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
                         } else {
-                            Console.log(e.content.text);
                             return e.content ? o.createElement("div", {
                                 className: "wc-card hero",
                                 onClick: n(e.content.tap)
@@ -5025,7 +5030,7 @@
                         function p(t, e) {
                             r(this, p);
                             var n = o(this, s.call(this, t, e));
-                            return n.version = I, n.state = {}, n.renderCount = 0, n.store = t[T] || e[T], n.propsMode = Boolean(t[T]), n.setWrappedInstance = n.setWrappedInstance.bind(n), h()(n.store, 'Could not find "' + T + '" in either the context or props of "' + u + '". Either wrap the root component in a <Provider>, or explicitly pass "' + T + '" as a prop to "' + u + '".'), n.initSelector(), n.initSubscription(), n
+                            return n.version = I, n.state = {}, n.renderCount = 0, n.store = t[T] || e[T], n.propsMode = Boolean(t[T]), n.setWrappedInstance = n.setWrappedInstance.bind(n), h()(n.store, 'Could not find "' + T + '" in either the context or props of "' + u + '". Either wrap the root component in a "provider>, or explicitly pass "' + T + '" as a prop to "' + u + '".'), n.initSelector(), n.initSubscription(), n
                         }
                         return i(p, s), p.prototype.getChildContext = function() {
                             var t, e = this.propsMode ? null : this.subscription;
