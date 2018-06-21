@@ -1,16 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\bin\\images",
-    "\\bin\\images\\carDesign",
     "\\bin\\images\\price",
     "\\bin\\images\\testDrive",
-    "\\FromExistingCode1\\bin",
-    "\\FromExistingCode1\\obj",
     "\\obj",
+    "\\public",
+    "\\public\\javascripts",
+    "\\public\\lib",
     "\\routes",
     "\\views"
   ],
-  "SelectedNode": "\\public",
   "PreviewInSolutionExplorer": false
 }

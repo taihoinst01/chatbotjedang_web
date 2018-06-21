@@ -6,43 +6,44 @@
     <link href="/stylesheets/botchat.css" rel="stylesheet" />
   </head>
   <body>
-  	<div id="bot" />
-  	<script src="https://grandizer.azurewebsites.net/lib/jquery.min.js"></script>
-  	<script src="https://grandizer.azurewebsites.net/lib/B_tLKTzaqVzw=90All.js"></script>
-  	<script src="https://grandizer.azurewebsites.net/lib/recorderWorker.js"></script>
-  	<script src="https://grandizer.azurewebsites.net/lib/r_2L=91cmJzxIl.js"></script>
-  	<script src="https://grandizer.azurewebsites.net/lib/d_zGK93GFZztll.js"></script>
+      <div id="bot" />
+      <script src="https://jedangweb.azurewebsites.net/lib/jquery.min.js"></script>
+      <script src="https://jedangweb.azurewebsites.net/lib/B_tLKTzaqVzw=90All.js"></script>
+      <script src="https://jedangweb.azurewebsites.net/lib/recorderWorker.js"></script>
+      <script src="https://jedangweb.azurewebsites.net/lib/r_2L=91cmJzxIl.js"></script>
+      <script src="https://jedangweb.azurewebsites.net/lib/d_zGK93GFZztll.js"></script>
 
-  	<script src="javascripts/s_2b=Z3GKTzVll.js"></script>
-  	<script src="javascripts/d_zGK93GFZzaOyVll.js"></script>
-  	<script src="javascripts/botchat.js"></script>
-  	<!--<script src="javascripts/vagel.js"></script>-->
-  	<script>
-        const botConnection = new BotChat.DirectLine({
-            secret: '1Vxk2ya0MPA.cwA.QEQ.KZQ2QkdSNmkJ_lq7fYx4K1axByZJVb41Tgr1gOTXXdc'
-        });
+      <script src="https://jedangweb.azurewebsites.net/javascripts/s_2b=Z3GKTzVll.js"></script>
+      <script src="https://jedangweb.azurewebsites.net/javascripts/d_zGK93GFZzaOyVll.js"></script>
+      <script src="https://jedangweb.azurewebsites.net/javascripts/botchat.js"></script>
+      <script src="https://jedangweb.azurewebsites.net/javascripts/vagel.js"></script>
+      <!--<script src="javascripts/vagel.js"></script>-->
+      <script>
+          const botConnection = new BotChat.DirectLine({
+              secret: '1Vxk2ya0MPA.cwA.QEQ.KZQ2QkdSNmkJ_lq7fYx4K1axByZJVb41Tgr1gOTXXdc'
+          });
 
-		BotChat.App({
-            botConnection: botConnection,
-			user: { id: 'userid' },
-			bot: { id: 'botid' },
-            resize: 'detect'
-        }, document.getElementById("bot"));
+          BotChat.App({
+              botConnection: botConnection,
+              user: { id: 'userid' },
+              bot: { id: 'botid' },
+              resize: 'detect'
+          }, document.getElementById("bot"));
 
-        function postButtonMessage(msg) {
-            botConnection
-                .postActivity({
-                    type: 'message',
-                    text: msg,
-                    from: { id: 'userid' },
-                    locale: 'ko'
-                })
-                .subscribe(function () {
-                    console.log('"buttonClicked" sent');
-                });
-        };
+          function postButtonMessage(msg) {
+              botConnection
+                  .postActivity({
+                      type: 'message',
+                      text: msg,
+                      from: { id: 'userid' },
+                      locale: 'ko'
+                  })
+                  .subscribe(function () {
+                      console.log('"buttonClicked" sent');
+                  });
+          };
 
-  	</script>
+      </script>
   </body>
 </html>
 
