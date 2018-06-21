@@ -2500,7 +2500,8 @@
                     return o.createElement("h2", null, t)
                 })
             },
-            m = function(t) {
+            m = function (t) {
+                lfn_speakTTS(t);
                 return i.renderIfNonempty(t, function(t) {
                     return o.createElement("p", null, t)
                 })
@@ -2544,7 +2545,6 @@
                                 className: "wc-card hero",
                                 onClick: n(e.content.tap)
                             }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
-                            lfn_speakTTS(e.content.text);
                         }
                     case "application/vnd.microsoft.card.thumbnail":
                         return e.content ? o.createElement("div", {
