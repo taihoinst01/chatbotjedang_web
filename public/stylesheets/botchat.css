@@ -193,7 +193,7 @@ body .wc-app, .wc-app button, .wc-app input, .wc-app textarea {font-family: 'Seg
 .wc-message-from {clear: both;color: #676767;font-size: 11px;margin-top: 5px;}
 
 /* cards */
-.wc-card {background-color: #fff;font-size: 13px; padding:15px !important; border: none !important}
+.wc-card {background-color: #fff;font-size: 12px; padding:15px !important; border: none !important}
 
 .wc-card button {background-color:#002c5f;color: #fff;min-height: 32px;width: 100%; padding: 0 15px;-webkit-border-radius:15px;-moz-border-radius:15px; border-radius:15px; border: none}
 
