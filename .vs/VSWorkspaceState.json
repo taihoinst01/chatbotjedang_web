@@ -1,8 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\bin\\images\\price",
-    "\\bin\\images\\testDrive",
+    "\\bin",
     "\\obj",
     "\\public",
     "\\public\\javascripts",
@@ -10,5 +9,6 @@
     "\\routes",
     "\\views"
   ],
+  "SelectedNode": "\\index.html",
   "PreviewInSolutionExplorer": false
 }

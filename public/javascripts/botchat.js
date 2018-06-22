@@ -2503,7 +2503,7 @@
             m = function (t) {
                 lfn_speakTTS(t);
                 return i.renderIfNonempty(t, function(t) {
-                    return o.createElement("p", null, t)
+                    return o.createElement("pre", null, t)
                 })
             };
         e.AttachmentView = function(t) {
