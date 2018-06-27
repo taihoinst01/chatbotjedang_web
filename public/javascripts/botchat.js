@@ -2541,7 +2541,7 @@
                                 onClick: n(e.content.tap)
                             }, o.createElement("div", { className: "wc-card-hero-newImage" }, s(e.content.images)), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
                         } else {
-                            console.log("e.content.buttons.length === " + e.content.button.length);
+                            console.log("e.content.buttons.length === " + e.content.button.len);
 
                             if (e.content.subtitle == "1") {
                                 lfn_speakTTS(e.content.text);
