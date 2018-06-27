@@ -2542,7 +2542,7 @@
                             }, o.createElement("div", { className: "wc-card-hero-newImage" }, s(e.content.images)), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
                         } else {
                             console.log("e.content.title === " + e.content.title);
-                            if (e.content.title == "LoginSuccess") {
+                            if (e.content.title == "LoginSuccess" || e.content.title == "주문완료") {
                                 lfn_speakTTS(e.content.text);
                                 return e.content ? o.createElement("div", {
                                     className: "wc-card hero",
