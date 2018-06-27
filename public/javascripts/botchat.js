@@ -2543,7 +2543,7 @@
                         } else {
                             //부분 tts 적용
                             if (e.content.title == "LoginSuccess" || e.content.title == "주문확인") {
-                                if (e.context.text !== "주문확인해주세요") {
+                                if (e.content.text !== "주문확인해주세요") {
                                     lfn_speakTTS(e.content.text);
                                 }
                                 
