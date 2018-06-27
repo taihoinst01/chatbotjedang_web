@@ -2501,7 +2501,7 @@
                 })
             },
             m = function (t) {
-                lfn_speakTTS(t);
+                //lfn_speakTTS(t);
                 return i.renderIfNonempty(t, function(t) {
                     return o.createElement("pre", null, t)
                 })
@@ -2542,10 +2542,19 @@
                             }, o.createElement("div", { className: "wc-card-hero-newImage" }, s(e.content.images)), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
                         } else {
                             console.log("e.content.title === " + e.content.title);
-                            return e.content ? o.createElement("div", {
-                                className: "wc-card hero",
-                                onClick: n(e.content.tap)
-                            }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                            if (e.content.title == "LoginSuccess") {
+                                lfn_speakTTS(e.content.text);
+                                return e.content ? o.createElement("div", {
+                                    className: "wc-card hero",
+                                    onClick: n(e.content.tap)
+                                }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                            } else {
+                                return e.content ? o.createElement("div", {
+                                    className: "wc-card hero",
+                                    onClick: n(e.content.tap)
+                                }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                            }
+                            
                         }
                     case "application/vnd.microsoft.card.thumbnail":
                         return e.content ? o.createElement("div", {
