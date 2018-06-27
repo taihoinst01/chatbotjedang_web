@@ -2546,7 +2546,7 @@
                                 //if (e.content.text !== "주문확인해주세요") {
                                 //    lfn_speakTTS(e.content.text);
                                 //}
-                                if (e.content.text.indexOf("주문확인해주세요") > -1) {
+                                if (e.content.text.indexOf("확인해주세요") > -1) {
                                     lfn_speakTTS(e.content.text);
                                 }
                                 return e.content ? o.createElement("div", {
