@@ -2547,7 +2547,7 @@
                                 //    lfn_speakTTS(e.content.text);
                                 //}
                                 if (e.content.text.indexOf("확인해주세요") < 0) {
-                                    lfn_speakTTS(e.content.text);
+                                    //lfn_speakTTS(e.content.text);
                                 }
                                 return e.content ? o.createElement("div", {
                                     className: "wc-card hero",
