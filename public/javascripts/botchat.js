@@ -2542,7 +2542,7 @@
                             }, o.createElement("div", { className: "wc-card-hero-newImage" }, s(e.content.images)), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
                         } else {
                             //부분 tts 적용
-                            if (e.content.title.indexOf("_tts") < 0) {
+                            if (e.content.title.indexOf("_tts") > -1) {
                                 //if (e.content.text !== "주문확인해주세요") {
                                 //    lfn_speakTTS(e.content.text);
                                 //}
