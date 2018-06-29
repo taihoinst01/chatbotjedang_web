@@ -2542,17 +2542,17 @@
                             }, o.createElement("div", { className: "wc-card-hero-newImage" }, s(e.content.images)), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
                         } else {
                             //부분 tts 적용
-                            if (e.content.title == "LoginSuccess" || e.content.title == "주문확인") {
+                            if (e.content.title.indexOf == "_tts") {
                                 //if (e.content.text !== "주문확인해주세요") {
                                 //    lfn_speakTTS(e.content.text);
                                 //}
-                                if (e.content.text.indexOf("확인해주세요") < 0) {
-                                    //lfn_speakTTS(e.content.text);
-                                }
+                                //if (e.content.text.indexOf("확인해주세요") < 0) {
+                                    lfn_speakTTS(e.content.text);
+                                //}
                                 return e.content ? o.createElement("div", {
                                     className: "wc-card hero",
                                     onClick: n(e.content.tap)
-                                }, s(e.content.images), d(e.content.title), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
+                                }, s(e.content.images), d(e.content.title.replace("_tts","")), v(e.content.subtitle), m(e.content.text), r(e.content.buttons)) : null;
                             } else {
                                 return e.content ? o.createElement("div", {
                                     className: "wc-card hero",
