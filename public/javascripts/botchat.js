@@ -2544,7 +2544,7 @@
                             //부분 tts 적용
                             if (e.content.title.indexOf("_tts") > -1) {
 
-                                var ttsStr = e.content.text.replace("(주)", "").replace("/", " ");
+                                var ttsStr = e.content.text.replace("(주)", " ").replace("/", " ");
 
                                 lfn_speakTTS(ttsStr);
 
