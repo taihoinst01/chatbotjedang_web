@@ -2544,7 +2544,7 @@
                             //부분 tts 적용
                             if (e.content.title.indexOf("_tts") > -1) {
 
-                                var ttsStr = e.content.text.replace(/(주)/gi, " ").replace(/\//gi, " ").replace("(1111)", " ").replace("(2222)", " ").replace("(3333)", " ");
+                                var ttsStr = e.content.text.replace(/\(주)/gi, " ").replace(/\//gi, " ").replace("(1111)", " ").replace("(2222)", " ").replace("(3333)", " ");
 
                                 lfn_speakTTS(ttsStr);
 
